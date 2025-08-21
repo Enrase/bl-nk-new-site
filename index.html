@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BL NK - Agence SEO pour Avocats et Professions Libérales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient': 'gradient 8s ease-in-out infinite',
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @keyframes gradient {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        @keyframes gradientX {
+            0%, 100% {
+                background-size: 200% 200%;
+                background-position: left center;
+            }
+            50% {
+                background-size: 200% 200%;
+                background-position: right center;
+            }
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) skewX(-12deg); }
+            100% { transform: translateX(300%) skewX(-12deg); }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes rockWiggle {
+            0%, 100% { transform: rotate(-1deg); }
+            50% { transform: rotate(1deg); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        .animate-slide-in-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.6s ease-out forwards;
+        }
+
+        .animate-rock-wiggle:hover {
+            animation: rockWiggle 0.5s ease-in-out;
+            background: linear-gradient(135deg, #1f1f1f 0%, #333 50%, #1f1f1f 100%);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-pulse-glow {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .animate-gradient-x {
+            background-size: 200% 200%;
+            animation: gradientX 6s ease infinite;
+        }
+
+        .animate-shine {
+            animation: shine 3s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        @keyframes scaleX {
+            from { 
+                transform: scaleX(0); 
+            }
+            to { 
+                transform: scaleX(1); 
+            }
+        }
+
+        .animate-scale-x {
+            animation: scaleX 0.8s ease-out forwards;
+            transform-origin: left;
+        }
+
+        .section-padding {
+            @apply py-20 lg:py-32;
+        }
+
+        .container-custom {
+            @apply max-w-7xl mx-auto px-6 lg:px-8;
+        }
+
+        .btn-primary {
+            @apply bg-black text-white font-medium py-4 px-8 rounded-full transition-all duration-300 hover:bg-gray-800 hover:scale-105 shadow-lg hover:shadow-xl;
+        }
+
+        .btn-secondary {
+            @apply bg-transparent text-black border border-black font-medium py-4 px-8 rounded-full transition-all duration-300 hover:bg-black hover:text-white hover:scale-105;
+        }
+
+        .btn-ghost {
+            @apply text-gray-600 hover:text-black font-medium py-2 px-4 rounded-lg transition-all duration-300 hover:bg-gray-100;
+        }
+
+        .card-modern {
+            @apply bg-white/80 backdrop-blur-sm border border-gray-100 rounded-2xl p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-black/5 hover:-translate-y-1 hover:border-gray-200;
+        }
+
+        .card-feature {
+            @apply bg-gradient-to-br from-white to-gray-50/50 border border-gray-200/50 rounded-2xl p-8 transition-all duration-500 hover:shadow-xl hover:shadow-black/10 hover:-translate-y-2 hover:border-black/20;
+        }
+
+        .card-glass {
+            @apply bg-white/60 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-xl;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #000000 0%, #374151 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.03) 0%, transparent 50%),
+                        linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(2) {
+            animation-delay: -2s;
+        }
+
+        .floating-element:nth-child(3) {
+            animation-delay: -4s;
+        }
+
+        .process-step {
+            @apply relative;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -1rem;
+            width: 2rem;
+            height: 1px;
+            background: linear-gradient(90deg, #e2e8f0, transparent);
+        }
+
+        .process-step:last-child::before {
+            display: none;
+        }
+
+        .faq-item {
+            @apply border border-gray-100 rounded-xl mb-4 overflow-hidden transition-all duration-300 hover:border-gray-300;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer.open {
+            max-height: 200px;
+            padding: 1.5rem;
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .number-badge {
+            @apply w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold text-lg;
+        }
+
+        .metric-card {
+            @apply text-center p-6 rounded-xl border border-gray-100 hover:border-gray-200 transition-all duration-300;
+        }
+
+        .testimonial-card {
+            @apply bg-white border border-gray-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300;
+        }
+
+        /* Navbar */
+        .navbar {
+            @apply fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-100 z-50;
+        }
+
+        /* Carrousel animation */
+        @keyframes scroll-logos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .animate-scroll-logos {
+            animation: scroll-logos 20s linear infinite;
+        }
+
+        .animate-scroll-logos:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="font-sans text-black bg-white">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container-custom">
+            <div class="flex items-center justify-between py-4">
+                <div class="font-black text-2xl tracking-tight">BL NK</div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="btn-ghost">Services</a>
+                    <a href="#results" class="btn-ghost">Résultats</a>
+                    <a href="#about" class="btn-ghost">À propos</a>
+                    <button class="btn-primary">Démarrer</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ultra-Premium Hero Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-gray-50/20 to-white relative overflow-hidden pt-16 pb-8">
+        <!-- Ultra-sophisticated background -->
+        <div class="absolute inset-0">
+            <!-- Multiple gradient layers for depth -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-gray-100/30 via-transparent to-gray-200/20"></div>
+            <div class="absolute inset-0 bg-gradient-to-bl from-transparent via-gray-50/40 to-transparent"></div>
+            
+            <!-- Animated geometric elements -->
+            <div class="absolute top-1/4 right-1/5 w-80 h-80 bg-gray-300/[0.08] rounded-full filter blur-3xl animate-pulse" style="animation-duration: 6s;"></div>
+            <div class="absolute bottom-1/3 left-1/6 w-64 h-64 bg-gray-400/[0.12] rounded-full filter blur-2xl animate-pulse" style="animation-duration: 8s;"></div>
+            <div class="absolute top-1/2 left-1/3 w-48 h-48 bg-gray-500/[0.06] rounded-full filter blur-xl animate-pulse" style="animation-duration: 10s;"></div>
+            
+            <!-- Floating micro-particles -->
+            <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-gray-400/[0.15] rounded-full animate-pulse" style="animation-delay: 0s; animation-duration: 4s;"></div>
+            <div class="absolute top-2/3 right-1/4 w-1.5 h-1.5 bg-gray-500/[0.2] rounded-full animate-pulse" style="animation-delay: 2s; animation-duration: 6s;"></div>
+            <div class="absolute bottom-1/3 right-1/3 w-1 h-1 bg-gray-600/[0.25] rounded-full animate-pulse" style="animation-delay: 4s; animation-duration: 5s;"></div>
+            
+            <!-- Premium grid pattern -->
+            <div class="absolute inset-0 opacity-[0.012] animate-pulse" style="background-image: radial-gradient(circle at 2px 2px, rgba(0,0,0,0.1) 1px, transparent 0); background-size: 80px 80px; animation-duration: 12s;"></div>
+        </div>
+        
+        <div class="relative w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="flex flex-col items-center justify-center text-center h-full">
+                <div class="max-w-5xl mx-auto">
+                    <!-- Simple Badge -->
+                    <div class="mb-8">
+                        <span class="inline-flex items-center text-gray-600 text-sm font-medium">
+                            <span class="mr-2">⚖️</span>
+                            Agence SEO avocats et professions libérales
+                        </span>
+                    </div>
+                    
+                    <!-- Clean Main Title -->
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-10 leading-[1.02] tracking-[-0.02em] text-black px-4 max-w-6xl mx-auto">
+                        <span class="relative inline-block animate-fade-in-up" style="animation-delay: 0.2s;">
+                            Soyez celui que 
+                            <div class="absolute -bottom-2 left-0 w-full h-[4px] bg-gradient-to-r from-transparent via-gray-400/30 to-transparent blur-[1px] rounded-full animate-pulse" style="animation-duration: 3s;"></div>
+                        </span>
+                        <br class="hidden sm:block"/>
+                        <span class="relative inline-block mt-2 sm:mt-0 animate-fade-in-up" style="animation-delay: 0.4s;">
+                            <span class="relative z-10 font-black">
+                                Google <span class="bg-black text-white px-3 py-1 mx-1 rounded-sm transform -rotate-1 inline-block shadow-lg">recommande</span>
+                            </span>
+                            <div class="absolute -bottom-2 left-0 w-full h-6 bg-gradient-to-r from-gray-200/40 via-gray-300/60 to-gray-200/40 blur-sm rounded-full transform rotate-1 animate-bounce" style="animation-duration: 4s;"></div>
+                        </span>
+                        <br class="block sm:hidden"/>
+                        <span class="relative inline-block animate-fade-in-up" style="animation-delay: 0.6s;">
+                            <span class="relative z-10">en premier</span>
+                            <!-- Effet de brillance qui passe -->
+                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 animate-shine"></div>
+                        </span>
+                    </div>
+                    
+                    <!-- Premium KPIs Section -->
+                    <div class="max-w-4xl mx-auto mb-12 animate-fade-in-up" style="animation-delay: 0.7s;">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+                            <!-- KPI 1: Trafic -->
+                            <div class="group relative">
+                                <div class="absolute -inset-1 bg-gradient-to-r from-blue-500/8 via-gray-300/12 to-blue-500/8 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-600"></div>
+                                <div class="relative bg-gradient-to-br from-white/85 via-white/80 to-white/75 backdrop-blur-sm rounded-xl border border-gray-200/40 p-4 lg:p-5 shadow-[0_6px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_28px_rgba(0,0,0,0.06)] transition-all duration-400 hover:-translate-y-0.5 text-center">
+                                    <div class="relative mb-2">
+                                        <div class="text-2xl lg:text-3xl font-black bg-gradient-to-br from-blue-600 to-gray-800 bg-clip-text text-transparent">+250%</div>
+                                        <div class="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-12 h-[1.5px] bg-gradient-to-r from-blue-500/30 to-gray-600/30 rounded-full"></div>
+                                    </div>
+                                    <p class="text-xs lg:text-sm font-medium text-gray-600">de trafic en moyenne</p>
+                                </div>
+                            </div>
+                            
+                            <!-- KPI 2: Positionnement -->
+                            <div class="group relative">
+                                <div class="absolute -inset-1 bg-gradient-to-r from-green-500/8 via-gray-300/12 to-green-500/8 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-600"></div>
+                                <div class="relative bg-gradient-to-br from-white/85 via-white/80 to-white/75 backdrop-blur-sm rounded-xl border border-gray-200/40 p-4 lg:p-5 shadow-[0_6px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_28px_rgba(0,0,0,0.06)] transition-all duration-400 hover:-translate-y-0.5 text-center">
+                                    <div class="relative mb-2">
+                                        <div class="text-2xl lg:text-3xl font-black bg-gradient-to-br from-green-600 to-gray-800 bg-clip-text text-transparent">Top 3</div>
+                                        <div class="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-12 h-[1.5px] bg-gradient-to-r from-green-500/30 to-gray-600/30 rounded-full"></div>
+                                    </div>
+                                    <p class="text-xs lg:text-sm font-medium text-gray-600">Google en 6 mois</p>
+                                </div>
+                            </div>
+                            
+                            <!-- KPI 3: Satisfaction -->
+                            <div class="group relative">
+                                <div class="absolute -inset-1 bg-gradient-to-r from-purple-500/8 via-gray-300/12 to-purple-500/8 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-600"></div>
+                                <div class="relative bg-gradient-to-br from-white/85 via-white/80 to-white/75 backdrop-blur-sm rounded-xl border border-gray-200/40 p-4 lg:p-5 shadow-[0_6px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_28px_rgba(0,0,0,0.06)] transition-all duration-400 hover:-translate-y-0.5 text-center">
+                                    <div class="relative mb-2">
+                                        <div class="text-2xl lg:text-3xl font-black bg-gradient-to-br from-purple-600 to-gray-800 bg-clip-text text-transparent">95%</div>
+                                        <div class="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-12 h-[1.5px] bg-gradient-to-r from-purple-500/30 to-gray-600/30 rounded-full"></div>
+                                    </div>
+                                    <p class="text-xs lg:text-sm font-medium text-gray-600">de clients satisfaits</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced Description with Premium Elements -->
+                    <div class="max-w-4xl mx-auto mb-12">
+                        <!-- Baseline text styled like KPIs -->
+                        <div class="relative group text-center animate-fade-in-up" style="animation-delay: 0.8s;">
+                            <!-- Baseline card with KPI styling -->
+                            <div class="relative">
+                                <div class="absolute -inset-1 bg-gradient-to-r from-gray-500/8 via-gray-300/12 to-gray-500/8 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-600"></div>
+                                <div class="relative bg-gradient-to-br from-white/85 via-white/80 to-white/75 backdrop-blur-sm rounded-xl border border-gray-200/40 p-4 lg:p-5 shadow-[0_6px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_28px_rgba(0,0,0,0.06)] transition-all duration-400 hover:-translate-y-0.5">
+                                    <div class="relative mb-2">
+                                        <div class="text-2xl lg:text-3xl font-black bg-gradient-to-br from-gray-600 to-gray-800 bg-clip-text text-transparent">9 fois sur 10</div>
+                                        <div class="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-12 h-[1.5px] bg-gradient-to-r from-gray-500/30 to-gray-600/30 rounded-full"></div>
+                                    </div>
+                                    <p class="text-xs lg:text-sm font-medium text-gray-600">un internaute cherche son avocat sur Internet</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Refined highlighted question -->
+                        <div class="relative group animate-fade-in-up mt-8" style="animation-delay: 1.0s;">
+                            <!-- Subtle glow -->
+                            <div class="absolute -inset-3 bg-gradient-to-r from-gray-200/10 via-gray-100/15 to-gray-200/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-800"></div>
+                            
+                            <div class="relative inline-block px-6 py-4 bg-gradient-to-br from-white/90 via-white/85 to-white/80 rounded-2xl border border-gray-200/50 backdrop-blur-sm shadow-[0_6px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_10px_28px_rgba(0,0,0,0.08)] transition-all duration-500 hover:scale-[1.015] cursor-default">
+                                <p class="text-xl sm:text-2xl font-semibold text-black relative text-center">
+                                    Êtes-vous visible quand ils ont besoin de vous ?
+                                </p>
+                                
+                                <!-- Subtle accent -->
+                                <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-[2px] bg-gradient-to-r from-transparent via-gray-400/40 to-transparent rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ultra-Premium CTAs with Animation -->
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-16 sm:mb-20 px-4 animate-fade-in-up" style="animation-delay: 1.4s;">
+                        <!-- Primary CTA -->
+                        <div class="group relative">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-black via-gray-800 to-black rounded-2xl blur opacity-40 group-hover:opacity-70 transition-opacity duration-700"></div>
+                            <button class="relative w-full sm:w-auto bg-gradient-to-r from-black via-gray-900 to-black text-white font-bold py-4 sm:py-5 px-8 sm:px-10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.4)] transition-all duration-500 hover:scale-[1.02] hover:-translate-y-0.5 text-base sm:text-lg group-hover:from-gray-900 group-hover:via-black group-hover:to-gray-900">
+                                <span class="relative z-10 flex items-center justify-center gap-3">
+                                    Échangez avec un expert
+                                    <span class="text-xl group-hover:translate-x-1 transition-transform duration-500">→</span>
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <!-- Secondary CTA -->
+                        <div class="group relative">
+                            <button class="relative w-full sm:w-auto bg-white/80 backdrop-blur-sm text-black border-2 border-gray-300/60 font-bold py-4 sm:py-5 px-8 sm:px-10 rounded-xl hover:border-gray-600/80 hover:bg-white/95 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-0.5 text-base sm:text-lg shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
+                                <span class="flex items-center justify-center gap-3">
+                                    Obtenir un pré-audit
+                                    <span class="text-lg group-hover:rotate-12 transition-transform duration-500">🔍</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ultra-Premium Trust Metrics -->
+                <div class="w-full max-w-6xl mx-auto">
+                    <div class="relative">
+                        <!-- Elegant separator -->
+                        <div class="flex items-center justify-center mb-12 sm:mb-16">
+                            <div class="flex items-center gap-4 opacity-40">
+                                <div class="w-16 h-[1px] bg-gradient-to-r from-transparent to-gray-400"></div>
+                                <div class="w-2 h-2 bg-gray-400 rounded-full animate-pulse" style="animation-duration: 4s;"></div>
+                                <div class="w-16 h-[1px] bg-gradient-to-r from-gray-400 to-transparent"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Carrousel de logos -->
+                        <div class="relative overflow-hidden max-w-5xl mx-auto">
+                            <div class="flex animate-scroll-logos">
+                                <!-- Logo 1 -->
+                                <div class="group flex-shrink-0 mx-4">
+                                    <div class="absolute -inset-3 bg-gradient-to-br from-gray-100/40 via-transparent to-gray-200/40 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
+                                    <div class="relative bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gray-200/40 shadow-[0_4px_20px_rgba(0,0,0,0.04)] group-hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] transition-all duration-500 group-hover:-translate-y-2 w-32 sm:w-40">
+                                        <img 
+                                            src="https://api.bl-nk.fr/wp-content/uploads/2025/08/Agence-SEO-Avocats-4.webp" 
+                                            alt="Client logo" 
+                                            class="h-12 sm:h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-500 group-hover:scale-105 rounded-lg mx-auto"
+                                        />
+                                    </div>
+                                </div>
+                                
+                                <!-- Logo 2 -->
+                                <div class="group flex-shrink-0 mx-4">
+                                    <div class="absolute -inset-3 bg-gradient-to-br from-gray-100/40 via-transparent to-gray-200/40 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
+                                    <div class="relative bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gray-200/40 shadow-[0_4px_20px_rgba(0,0,0,0.04)] group-hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] transition-all duration-500 group-hover:-translate-y-2 w-32 sm:w-40">
+                                        <img 
+                                            src="https://api.bl-nk.fr/wp-content/uploads/2025/08/Agence-SEO-Avocats-5.webp" 
+                                            alt="Client logo" 
+                                            class="h-12 sm:h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-500 group-hover:scale-105 rounded-lg mx-auto"
+                                        />
+                                    </div>
+                                </div>
+                                
+                                <!-- Logo 3 -->
+                                <div class="group flex-shrink-0 mx-4">
+                                    <div class="absolute -inset-3 bg-gradient-to-br from-gray-100/40 via-transparent to-gray-200/40 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
+                                    <div class="relative bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gray-200/40 shadow-[0_4px_20px_rgba(0,0,0,0.04)] group-hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] transition-all duration-500 group-hover:-translate-y-2 w-32 sm:w-40">
+                                        <img 
+                                            src="https://api.bl-nk.fr/wp-content/uploads/2025/08/Agence-SEO-Avocats-3.webp" 
+                                            alt="Client logo" 
+                                            class="h-12 sm:h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-500 group-hover:scale-105 rounded-lg mx-auto"
+                                        />
+                                    </div>
+                                </div>
+                                
+                                <!-- Logo 4 -->
+                                <div class="group flex-shrink-0 mx-4">
+                                    <div class="absolute -inset-3 bg-gradient-to-br from-gray-100/40 via-transparent to-gray-200/40 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
+                                    <div class="relative bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gray-200/40 shadow-[0_4px_20px_rgba(0,0,0,0.04)] group-hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] transition-all duration-500 group-hover:-translate-y-2 w-32 sm:w-40">
+                                        <img 
+                                            src="https://api.bl-nk.fr/wp-content/uploads/2025/08/Abeille-SEO-Avocats.webp" 
+                                            alt="Client logo" 
+                                            class="h-12 sm:h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-500 group-hover:scale-105 rounded-lg mx-auto"
+                                        />
+                                    </div>
+                                </div>
+                                
+                                <!-- Logo 5 -->
+                                <div class="group flex-shrink-0 mx-4">
+                                    <div class="absolute -inset-3 bg-gradient-to-br from-gray-100/40 via-transparent to-gray-200/40 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
+                                    <div class="relative bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gray-200/40 shadow-[0_4px_20px_rgba(0,0,0,0.04)] group-hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] transition-all duration-500 group-hover:-translate-y-2 w-32 sm:w-40">
+                                        <img 
+                                            src="https://api.bl-nk.fr/wp-content/uploads/2025/08/Agence-SEO-Avocats-1.webp" 
+                                            alt="Client logo" 
+                                            class="h-12 sm:h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-500 group-hover:scale-105 rounded-lg mx-auto"
+                                        />
+                                    </div>
+                                </div>
+                                
+                                <!-- Logo 6 -->
+                                <div class="group flex-shrink-0 mx-4">
+                                    <div class="absolute -inset-3 bg-gradient-to-br from-gray-100/40 via-transparent to-gray-200/40 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
+                                    <div class="relative bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gray-200/40 shadow-[0_4px_20px_rgba(0,0,0,0.04)] group-hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] transition-all duration-500 group-hover:-translate-y-2 w-32 sm:w-40">
+                                        <img 
+                                            src="https://api.bl-nk.fr/wp-content/uploads/2025/08/Agence-SEO-Avocats-2.webp" 
+                                            alt="Client logo" 
+                                            class="h-12 sm:h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-500 group-hover:scale-105 rounded-lg mx-auto"
+                                        />
+                                    </div>
+                                </div>
+                                
+                                <!-- Logo 7 -->
+                                <div class="group flex-shrink-0 mx-4">
+                                    <div class="absolute -inset-3 bg-gradient-to-br from-gray-100/40 via-transparent to-gray-200/40 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
+                                    <div class="relative bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gray-200/40 shadow-[0_4px_20px_rgba(0,0,0,0.04)] group-hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] transition-all duration-500 group-hover:-translate-y-2 w-32 sm:w-40">
+                                        <img 
+                                            src="https://api.bl-nk.fr/wp-content/uploads/2025/08/Agence-SEO-Avocats.webp" 
+                                            alt="Client logo" 
+                                            class="h-12 sm:h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-500 group-hover:scale-105 rounded-lg mx-auto"
+                                        />
+                                    </div>
+                                </div>
+                                
+                                <!-- Duplicate pour scroll infini -->
+                                <div class="group flex-shrink-0 mx-4">
+                                    <div class="absolute -inset-3 bg-gradient-to-br from-gray-100/40 via-transparent to-gray-200/40 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
+                                    <div class="relative bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gray-200/40 shadow-[0_4px_20px_rgba(0,0,0,0.04)] group-hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] transition-all duration-500 group-hover:-translate-y-2 w-32 sm:w-40">
+                                        <img 
+                                            src="https://api.bl-nk.fr/wp-content/uploads/2025/08/Agence-SEO-Avocats-4.webp" 
+                                            alt="Client logo" 
+                                            class="h-12 sm:h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-500 group-hover:scale-105 rounded-lg mx-auto"
+                                        />
+                                    </div>
+                                </div>
+                                
+                                <div class="group flex-shrink-0 mx-4">
+                                    <div class="absolute -inset-3 bg-gradient-to-br from-gray-100/40 via-transparent to-gray-200/40 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
+                                    <div class="relative bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gray-200/40 shadow-[0_4px_20px_rgba(0,0,0,0.04)] group-hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] transition-all duration-500 group-hover:-translate-y-2 w-32 sm:w-40">
+                                        <img 
+                                            src="https://api.bl-nk.fr/wp-content/uploads/2025/08/Agence-SEO-Avocats-5.webp" 
+                                            alt="Client logo" 
+                                            class="h-12 sm:h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-500 group-hover:scale-105 rounded-lg mx-auto"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clean Why SEO Section -->
+    <section class="py-20 sm:py-28 lg:py-36 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
+        <!-- Clean background -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-tr from-white/[0.02] via-transparent to-white/[0.03]"></div>
+            <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-white/[0.01] rounded-full filter blur-3xl animate-pulse" style="animation-duration: 20s;"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-64 h-64 bg-white/[0.015] rounded-full filter blur-3xl animate-pulse" style="animation-duration: 25s;"></div>
+        </div>
+        
+        <div class="relative max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <!-- Clean Header -->
+            <div class="text-center mb-20">
+                
+                <!-- Clean title -->
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 max-w-4xl mx-auto animate-fade-in-up">
+                    Pourquoi le SEO est-il <span class="bg-white text-black px-3 py-1 mx-1 rounded-sm transform rotate-1 inline-block shadow-lg animate-rock-wiggle">important</span> pour votre cabinet ?
+                </h2>
+                
+                <!-- Clean description -->
+                <p class="text-lg sm:text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
+                    Dans un marché juridique concurrentiel, être visible sur Google est devenu indispensable pour développer votre cabinet.
+                </p>
+            </div>
+            
+            <!-- Harmonized Content Grid with Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+                <!-- Point 1 -->
+                <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-on-scroll text-center">
+                    <div class="w-16 h-16 bg-gray-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">📱</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Premier réflexe</h3>
+                    <p class="text-gray-200 leading-relaxed">
+                        9 fois sur 10, un internaute cherche son avocat sur Internet avant de prendre sa décision.
+                    </p>
+                </div>
+                
+                <!-- Point 2 -->
+                <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-on-scroll text-center">
+                    <div class="w-16 h-16 bg-gray-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">🔍</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Visibilité cruciale</h3>
+                    <p class="text-gray-200 leading-relaxed">
+                        Si vous n'apparaissez pas dans les premiers résultats Google, vous perdez des clients potentiels.
+                    </p>
+                </div>
+                
+                <!-- Point 3 -->
+                <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-on-scroll text-center">
+                    <div class="w-16 h-16 bg-gray-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">⚖️</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Confiance établie</h3>
+                    <p class="text-gray-200 leading-relaxed">
+                        Le SEO positionne durablement votre cabinet et inspire confiance à vos prospects.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clean Benefits Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Clean Header -->
+            <div class="text-center mb-16">
+                
+                <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 animate-fade-in-up">
+                    Pourquoi investir dans le SEO <span class="bg-black text-white px-3 py-1 mx-1 rounded-sm transform -rotate-1 inline-block shadow-lg animate-rock-wiggle">transforme</span> votre cabinet
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Quatre bénéfices mesurables qui font la différence pour votre développement commercial
+                </p>
+            </div>
+            
+            <!-- Clean Benefits Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Benefit 1: Visibilité -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-slide-in-left">
+                    <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">📈</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+                        Visibilité accrue et crédibilité renforcée
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Apparaître en première page Google établit immédiatement votre expertise et inspire confiance à vos prospects.
+                    </p>
+                    <div class="inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-200 rounded-xl">
+                        <span class="text-sm font-bold text-blue-700">75% des clics sur la page 1</span>
+                    </div>
+                </div>
+                
+                <!-- Benefit 2: Clients qualifiés -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-slide-in-right">
+                    <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">🎯</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+                        Clients plus qualifiés et motivés
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Les prospects qui vous trouvent via Google recherchent activement vos services et sont prêts à s'engager.
+                    </p>
+                    <div class="inline-flex items-center px-4 py-2 bg-green-50 border border-green-200 rounded-xl">
+                        <span class="text-sm font-bold text-green-700">+60% de taux de conversion</span>
+                    </div>
+                </div>
+                
+                <!-- Benefit 3: ROI -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">💰</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+                        ROI supérieur aux méthodes traditionnelles
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Le SEO génère un retour sur investissement durable, contrairement aux publicités qui s'arrêtent dès que vous cessez de payer.
+                    </p>
+                    <div class="inline-flex items-center px-4 py-2 bg-yellow-50 border border-yellow-200 rounded-xl">
+                        <span class="text-sm font-bold text-yellow-700">5x plus rentable que la pub</span>
+                    </div>
+                </div>
+                
+                <!-- Benefit 4: 24h/24 -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">⏰</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+                        Développement commercial 24h/24
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Votre site travaille en permanence pour vous, attirant de nouveaux clients même pendant vos vacances.
+                    </p>
+                    <div class="inline-flex items-center px-4 py-2 bg-purple-50 border border-purple-200 rounded-xl">
+                        <span class="text-sm font-bold text-purple-700">Acquisition automatique</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom CTA -->
+            <div class="text-center mt-16">
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+                        Prêt à transformer votre cabinet ?
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Découvrez comment le SEO peut révolutionner votre développement commercial
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                        <button class="bg-black text-white font-semibold py-3 px-6 rounded-xl hover:bg-gray-800 transition-colors duration-300">
+                            Analyser mon potentiel SEO
+                        </button>
+                        <button class="bg-white text-gray-900 border border-gray-300 font-semibold py-3 px-6 rounded-xl hover:border-gray-900 transition-colors duration-300">
+                            Étude de cas gratuite
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                
+                <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 animate-fade-in-up">
+                    Services SEO <span class="bg-black text-white px-3 py-1 mx-1 rounded-sm transform -rotate-1 inline-block shadow-lg animate-rock-wiggle">spécialisés</span> pour avocats
+                </h2>
+                
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Une approche sur-mesure qui respecte les spécificités du secteur juridique
+                </p>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Service 1: SEO Technique -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">⚙️</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+                        SEO Technique
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Optimisation complète de votre site web pour les moteurs de recherche et l'expérience utilisateur.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm text-gray-700">Vitesse de chargement optimisée</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm text-gray-700">Structure technique perfectionnée</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm text-gray-700">Responsive design mobile-first</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm text-gray-700">Sécurité et conformité RGPD</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2: Contenu Juridique -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">📝</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+                        Contenu Juridique Expert
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Création de contenus spécialisés qui positionnent votre expertise et attirent vos clients cibles.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm text-gray-700">Articles de blog optimisés</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm text-gray-700">Pages de services détaillées</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm text-gray-700">FAQ juridiques complètes</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm text-gray-700">Actualités juridiques régulières</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3: Référencement Local -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">📍</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+                        Référencement Local
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Optimisation pour être trouvé par les clients de votre zone géographique d'intervention.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm text-gray-700">Google My Business optimisé</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm text-gray-700">Citations locales cohérentes</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm text-gray-700">Avis clients gérés</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-400 rounded-full"></div>
+                            <span class="text-sm text-gray-700">Géolocalisation précise</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Section -->
+            <div class="mt-20 mb-16">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">
+                        L'équipe <span class="bg-black text-white px-3 py-1 mx-1 rounded-sm transform -rotate-1 inline-block shadow-lg animate-rock-wiggle">SEO</span> dédiée
+                    </h3>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Des experts spécialisés dans le référencement juridique pour maximiser vos résultats
+                    </p>
+                </div>
+                
+                <!-- Team Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Team Member 1: SEO Manager -->
+                    <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-on-scroll text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl text-white font-bold">MC</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Marie Carré</h4>
+                        <p class="text-blue-600 font-medium mb-4">SEO Manager</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            5 ans d'expérience en SEO juridique. Spécialisée dans l'optimisation technique et la stratégie de contenu pour cabinets d'avocats.
+                        </p>
+                    </div>
+                    
+                    <!-- Team Member 2: Content Specialist -->
+                    <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-on-scroll text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl text-white font-bold">JD</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Julien Dubois</h4>
+                        <p class="text-green-600 font-medium mb-4">Rédacteur Juridique SEO</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Juriste de formation, expert en création de contenus optimisés SEO. 3 ans d'expérience dans la rédaction juridique web.
+                        </p>
+                    </div>
+                    
+                    <!-- Team Member 3: Technical SEO -->
+                    <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-on-scroll text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl text-white font-bold">AL</span>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Antoine Lambert</h4>
+                        <p class="text-purple-600 font-medium mb-4">Développeur SEO</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Expert en optimisation technique et performances web. 4 ans d'expérience dans l'optimisation de sites juridiques.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Process Section -->
+            <div class="relative">
+                <div class="bg-gradient-to-r from-white/70 via-gray-50/50 to-white/70 rounded-3xl p-10 sm:p-14 lg:p-16 border border-gray-200/30">
+                    <div class="text-center mb-12 sm:mb-16">
+                        <h3 class="text-2xl sm:text-3xl font-semibold text-black mb-4 leading-tight">
+                            Notre processus en 4 étapes
+                        </h3>
+                        <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                            Une méthode éprouvée pour des résultats durables
+                        </p>
+                    </div>
+                    
+                    <!-- Steps -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
+                        <!-- Step 1 -->
+                        <div class="text-center group">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-black text-white rounded-xl font-semibold mb-4 group-hover:scale-105 transition-transform duration-300">
+                                1
+                            </div>
+                            <h4 class="text-lg font-semibold text-black mb-3">Audit 360°</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Analyse complète de votre présence digitale et de la concurrence
+                            </p>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="text-center group">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-black text-white rounded-xl font-semibold mb-4 group-hover:scale-105 transition-transform duration-300">
+                                2
+                            </div>
+                            <h4 class="text-lg font-semibold text-black mb-3">Stratégie</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Plan d'action personnalisé selon votre spécialité juridique
+                            </p>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="text-center group">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-black text-white rounded-xl font-semibold mb-4 group-hover:scale-105 transition-transform duration-300">
+                                3
+                            </div>
+                            <h4 class="text-lg font-semibold text-black mb-3">Exécution</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Mise en œuvre technique et création de contenu expert
+                            </p>
+                        </div>
+                        
+                        <!-- Step 4 -->
+                        <div class="text-center group">
+                            <div class="inline-flex items-center justify-center w-12 h-12 bg-black text-white rounded-xl font-semibold mb-4 group-hover:scale-105 transition-transform duration-300">
+                                4
+                            </div>
+                            <h4 class="text-lg font-semibold text-black mb-3">Suivi</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                Monitoring continu et optimisations pour maximiser le ROI
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO vs SEA Comparison Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-900 to-black">        
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Simple Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6 animate-fade-in-up">
+                    SEO <span class="bg-white text-black px-3 py-1 mx-1 rounded-sm transform rotate-1 inline-block shadow-lg animate-rock-wiggle">vs</span> SEA : quel investissement privilégier ?
+                </h2>
+                <p class="text-xl text-gray-100 leading-relaxed">
+                    Comprendre les différences pour faire le bon choix stratégique
+                </p>
+            </div>
+            
+            <!-- Comparison Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <!-- SEO Card -->
+                <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-slide-in-left animate-pulse-glow">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center">
+                            <span class="text-2xl">🌱</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">SEO</h3>
+                            <p class="text-green-300 text-sm font-semibold">Référencement naturel</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Key benefits -->
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start gap-3">
+                            <div class="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">Investissement durable</h4>
+                                <p class="text-gray-100 text-sm leading-relaxed">Les résultats perdurent même après l'arrêt des actions SEO</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">ROI exceptionnel</h4>
+                                <p class="text-gray-100 text-sm leading-relaxed">Coût par acquisition jusqu'à 5x inférieur au SEA sur le long terme</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">Crédibilité maximale</h4>
+                                <p class="text-gray-100 text-sm leading-relaxed">75% des utilisateurs font plus confiance aux résultats organiques</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="bg-green-600/10 rounded-xl p-4 border border-green-600/20">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-400 mb-1">6-12 mois</div>
+                            <p class="text-gray-200 text-sm">pour des résultats optimaux</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SEA Card -->
+                <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-slide-in-right animate-pulse-glow">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center">
+                            <span class="text-2xl">⚡</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">SEA</h3>
+                            <p class="text-orange-300 text-sm font-semibold">Publicité payante</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Key benefits -->
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start gap-3">
+                            <div class="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">Résultats immédiats</h4>
+                                <p class="text-gray-100 text-sm leading-relaxed">Visibilité instantanée dès le lancement des campagnes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">Contrôle total</h4>
+                                <p class="text-gray-100 text-sm leading-relaxed">Budget, audience et messages entièrement maîtrisés</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">Targeting précis</h4>
+                                <p class="text-gray-100 text-sm leading-relaxed">Ciblage géographique et démographique ultra-affiné</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="bg-orange-600/10 rounded-xl p-4 border border-orange-600/20">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-orange-400 mb-1">24-48h</div>
+                            <p class="text-gray-200 text-sm">pour des résultats visibles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom recommendation -->
+            <div class="text-center">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8">
+                        <div class="w-16 h-16 bg-gray-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl">💡</span>
+                        </div>
+                        
+                        <h3 class="text-2xl font-semibold text-white mb-6">
+                            Notre recommandation pour les avocats
+                        </h3>
+                        
+                        <p class="text-gray-100 leading-relaxed mb-8">
+                            Pour les cabinets d'avocats, <span class="font-semibold text-white">le SEO est l'investissement prioritaire</span>. Il construit une présence durable et inspire confiance, qualités essentielles dans le secteur juridique. Le SEA peut compléter en ciblant des urgences ou lancer rapidement une nouvelle spécialisation.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button class="bg-white text-black font-semibold py-3 px-8 rounded-xl hover:bg-gray-100 transition-all duration-300">
+                                Obtenir une stratégie SEO
+                            </button>
+                            <button class="border border-gray-600 text-white font-semibold py-3 px-8 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                                Discuter des options
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                
+                <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+                    Pourquoi nous <span class="bg-black text-white px-3 py-1 mx-1 rounded-sm transform rotate-2 inline-block shadow-lg">choisir</span> ?
+                </h2>
+                
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    L'expertise technique rencontre la connaissance du milieu juridique
+                </p>
+            </div>
+            
+            <!-- Clean Features Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Feature 1: Expertise juridique -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">⚖️</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Expertise juridique</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Équipe d'anciens juristes et avocats qui comprennent vos contraintes déontologiques et votre vocabulaire technique.
+                    </p>
+                </div>
+                
+                <!-- Feature 2: Résultats mesurables -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">🚀</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Résultats mesurables</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Méthodologie data-driven avec KPIs précis : positions Google, trafic qualifié, conversions client.
+                    </p>
+                </div>
+                
+                <!-- Feature 3: 100% personnalisé -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">🎯</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">100% personnalisé</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Chaque stratégie est unique, adaptée à votre spécialité, votre marché local et vos objectifs de croissance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="py-20 bg-gradient-to-br from-gray-900 to-black text-white">        
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Simple Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6">
+                    <span class="bg-white text-black px-3 py-1 mx-1 rounded-sm transform -rotate-1 inline-block shadow-lg">Résultats</span> clients
+                </h2>
+                <p class="text-xl text-gray-100 leading-relaxed">
+                    Des chiffres qui parlent. Des cabinets qui grandissent.
+                </p>
+            </div>
+            
+            <!-- Ultra-Premium Results Grid -->
+            <div class="grid lg:grid-cols-2 gap-8 sm:gap-12">
+                <!-- Result Card 1 -->
+                <div class="group relative">
+                    <!-- Multi-layer glow effects -->
+                    <div class="absolute -inset-3 bg-gradient-to-r from-blue-500/[0.08] via-green-400/[0.04] to-blue-500/[0.08] rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-500/[0.12] via-green-400/[0.08] to-blue-500/[0.12] rounded-3xl blur-lg opacity-0 group-hover:opacity-80 transition-opacity duration-700"></div>
+                    
+                    <!-- Premium glass card -->
+                    <div class="relative bg-gradient-to-br from-white/[0.08] via-white/[0.06] to-white/[0.04] backdrop-blur-md rounded-3xl p-8 sm:p-10 lg:p-12 border border-white/[0.15] shadow-[0_12px_40px_rgba(0,0,0,0.4),0_4px_12px_rgba(0,0,0,0.3)] hover:shadow-[0_24px_80px_rgba(0,0,0,0.5),0_8px_32px_rgba(59,130,246,0.15)] transition-all duration-700 h-full hover:-translate-y-3 group-hover:border-blue-400/30">
+                        <!-- Enhanced client header -->
+                        <div class="flex items-center gap-6 mb-10">
+                            <div class="relative group/logo">
+                                <div class="absolute -inset-1 bg-gradient-to-br from-blue-500/20 to-green-600/15 rounded-2xl blur group-hover/logo:from-blue-400/25 group-hover/logo:to-green-500/20 transition-colors duration-500"></div>
+                                <div class="relative w-18 h-18 bg-gradient-to-br from-white via-gray-100 to-white text-black rounded-xl flex items-center justify-center font-black text-2xl shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] border border-gray-200/20 group-hover/logo:scale-110 transition-transform duration-300">
+                                    A
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2 group-hover:text-blue-50 transition-colors duration-300">Alter Avocats</h3>
+                                <p class="text-gray-100 text-lg font-medium group-hover:text-gray-200 transition-colors duration-300">Droit pénal & divorce</p>
+                            </div>
+                        </div>
+                    
+                        <!-- Premium metrics display -->
+                        <div class="relative group/metrics mb-8">
+                            <div class="absolute -inset-2 bg-gradient-to-r from-green-500/10 via-blue-400/8 to-green-500/10 rounded-2xl blur opacity-50 group-hover/metrics:opacity-100 transition-opacity duration-500"></div>
+                            <div class="relative bg-gradient-to-br from-white/[0.12] via-white/[0.08] to-white/[0.06] backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/[0.2] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
+                                <div class="flex items-center justify-between mb-6">
+                                    <span class="text-sm font-bold text-gray-100 tracking-wider uppercase">Visiteurs mensuels</span>
+                                    <div class="px-3 py-1 bg-green-500/20 text-green-200 text-xs font-bold rounded-full border border-green-400/30">+300%</div>
+                                </div>
+                                <div class="flex items-center gap-6">
+                                    <div class="text-3xl sm:text-4xl font-black text-white">2K → 8K</div>
+                                    <div class="text-sm text-gray-200 font-medium">en 16 mois</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-100 leading-relaxed text-lg font-light mb-8 group-hover:text-gray-200 transition-colors duration-300">
+                            Multiplication par 4 du trafic organique, générant une augmentation significative des prises de rendez-vous clients.
+                        </p>
+                        
+                        <!-- Premium CTA -->
+                        <div class="relative group/cta">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-white/20 to-blue-400/20 rounded-xl blur opacity-60 group-hover/cta:opacity-100 transition-opacity duration-500"></div>
+                            <button class="relative w-full bg-gradient-to-r from-white/[0.1] via-white/[0.15] to-white/[0.1] text-white border border-white/[0.3] font-bold py-4 px-8 rounded-xl hover:border-white/[0.4] hover:bg-white/[0.2] transition-all duration-300 hover:scale-[1.02] text-lg shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+                                <span class="flex items-center justify-center gap-3">
+                                    Voir l'étude de cas
+                                    <span class="text-xl group-hover/cta:translate-x-1 transition-transform duration-300">→</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Result Card 2 -->
+                <div class="group relative">
+                    <!-- Multi-layer glow effects -->
+                    <div class="absolute -inset-3 bg-gradient-to-r from-purple-500/[0.08] via-blue-400/[0.04] to-purple-500/[0.08] rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+                    <div class="absolute -inset-1 bg-gradient-to-r from-purple-500/[0.12] via-blue-400/[0.08] to-purple-500/[0.12] rounded-3xl blur-lg opacity-0 group-hover:opacity-80 transition-opacity duration-700"></div>
+                    
+                    <!-- Premium glass card -->
+                    <div class="relative bg-gradient-to-br from-white/[0.08] via-white/[0.06] to-white/[0.04] backdrop-blur-md rounded-3xl p-8 sm:p-10 lg:p-12 border border-white/[0.15] shadow-[0_12px_40px_rgba(0,0,0,0.4),0_4px_12px_rgba(0,0,0,0.3)] hover:shadow-[0_24px_80px_rgba(0,0,0,0.5),0_8px_32px_rgba(147,51,234,0.15)] transition-all duration-700 h-full hover:-translate-y-3 group-hover:border-purple-400/30">
+                        <!-- Enhanced client header -->
+                        <div class="flex items-center gap-6 mb-10">
+                            <div class="relative group/logo">
+                                <div class="absolute -inset-1 bg-gradient-to-br from-purple-500/20 to-blue-600/15 rounded-2xl blur group-hover/logo:from-purple-400/25 group-hover/logo:to-blue-500/20 transition-colors duration-500"></div>
+                                <div class="relative w-18 h-18 bg-gradient-to-br from-white via-gray-100 to-white text-black rounded-xl flex items-center justify-center font-black text-2xl shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] border border-gray-200/20 group-hover/logo:scale-110 transition-transform duration-300">
+                                    C
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2 group-hover:text-purple-50 transition-colors duration-300">Clément Poirier</h3>
+                                <p class="text-gray-100 text-lg font-medium group-hover:text-gray-200 transition-colors duration-300">Droit immobilier</p>
+                            </div>
+                        </div>
+                    
+                        <!-- Premium metrics display -->
+                        <div class="relative group/metrics mb-8">
+                            <div class="absolute -inset-2 bg-gradient-to-r from-purple-500/10 via-blue-400/8 to-purple-500/10 rounded-2xl blur opacity-50 group-hover/metrics:opacity-100 transition-opacity duration-500"></div>
+                            <div class="relative bg-gradient-to-br from-white/[0.12] via-white/[0.08] to-white/[0.06] backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/[0.2] shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
+                                <div class="flex items-center justify-between mb-6">
+                                    <span class="text-sm font-bold text-gray-100 tracking-wider uppercase">Position Google</span>
+                                    <div class="px-3 py-1 bg-purple-500/20 text-purple-200 text-xs font-bold rounded-full border border-purple-400/30">TOP 3</div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-xl sm:text-2xl font-black text-white">\"Avocat Droit Immobilier\"</div>
+                                    <div class="text-sm text-gray-200 font-medium">en 6 mois</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-100 leading-relaxed text-lg font-light mb-8 group-hover:text-gray-200 transition-colors duration-300">
+                            Positionnement sur une requête ultra-compétitive, générant un flux constant de prospects qualifiés.
+                        </p>
+                        
+                        <!-- Premium CTA -->
+                        <div class="relative group/cta">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-white/20 to-purple-400/20 rounded-xl blur opacity-60 group-hover/cta:opacity-100 transition-opacity duration-500"></div>
+                            <button class="relative w-full bg-gradient-to-r from-white/[0.1] via-white/[0.15] to-white/[0.1] text-white border border-white/[0.3] font-bold py-4 px-8 rounded-xl hover:border-white/[0.4] hover:bg-white/[0.2] transition-all duration-300 hover:scale-[1.02] text-lg shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+                                <span class="flex items-center justify-center gap-3">
+                                    Voir l'étude de cas
+                                    <span class="text-xl group-hover/cta:translate-x-1 transition-transform duration-300">→</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barre de réassurance -->
+    <section class="py-12 bg-gray-100">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="py-4">
+                    <div class="text-2xl font-bold text-gray-900">75%</div>
+                    <p class="text-xs text-gray-600">ne dépassent jamais la page 1</p>
+                </div>
+                <div class="py-4">
+                    <div class="text-2xl font-bold text-gray-900">90%</div>
+                    <p class="text-xs text-gray-600">des recherches juridiques sur Google</p>
+                </div>
+                <div class="py-4">
+                    <div class="text-2xl font-bold text-gray-900">5x</div>
+                    <p class="text-xs text-gray-600">plus de clics en position #1</p>
+                </div>
+                <div class="py-4">
+                    <div class="text-2xl font-bold text-gray-900">68%</div>
+                    <p class="text-xs text-gray-600">commencent par une recherche</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avis Google Authentiques -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Header avec logo Google -->
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center gap-3 mb-6">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24">
+                        <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                        <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    <h2 class="text-3xl font-bold text-gray-900">Avis Google</h2>
+                </div>
+                <div class="flex items-center justify-center gap-2 mb-2">
+                    <div class="flex text-yellow-400 text-xl">★★★★★</div>
+                    <span class="text-2xl font-bold text-gray-900">4.9</span>
+                    <span class="text-gray-600">(12 avis)</span>
+                </div>
+                <p class="text-gray-600">BL NK - Agence SEO spécialisée avocats</p>
+            </div>
+
+            <!-- Grille d'avis -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Avis 1 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow animate-on-scroll">
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold">P</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-900">Pierre Négrel</h4>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <span>5 avis</span>
+                                <span>•</span>
+                                <span>il y a 4 semaines</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mb-3">★★★★★</div>
+                    <p class="text-gray-700 text-sm leading-relaxed">J'ai eu une superbe expérience avec cette agence de communication qui a su répondre à mes nombreuses attentes et exigences au niveau de ma stratégie de référencement de mon site web. Je ne regrette pas du tout d'avoir su leur faire confiance suite aux recommandations d'un collègue.</p>
+                </div>
+
+                <!-- Avis 2 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow animate-on-scroll">
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-semibold">M</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-900">Mamadou Waggeh</h4>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <span>7 avis</span>
+                                <span>•</span>
+                                <span>il y a 3 semaines</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Nouveau</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mb-3">★★★★★</div>
+                    <p class="text-gray-700 text-sm leading-relaxed">Cela fait maintenant un an que je travaille avec l'agence BLNK, et je ne peux que recommander. Leur expertise en SEO, acquisition en ligne et identité visuelle n'est plus à démontrer. L'équipe comprend parfaitement les enjeux spécifiques aux professions réglementées, notamment dans le domaine du droit.</p>
+                </div>
+
+                <!-- Avis 3 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow animate-on-scroll">
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-semibold">A</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-900">Antoine Skrzynski</h4>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">Guide local</span>
+                                <span>26 avis</span>
+                                <span>•</span>
+                                <span>il y a 4 semaines</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mb-3">★★★★★</div>
+                    <p class="text-gray-700 text-sm leading-relaxed">BL NK est une agence sérieuse et compétente qui m'accompagne efficacement. Pierre COLLIOT suit de près le développement du référencement du cabinet et s'est entouré d'une équipe efficace. Le résultat est un site plus propre, plus professionnel et une présence améliorée.</p>
+                </div>
+
+                <!-- Avis 4 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow animate-on-scroll">
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white font-semibold">C</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-900">Camille Merlet</h4>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <span>5 avis</span>
+                                <span>•</span>
+                                <span>il y a 3 semaines</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Nouveau</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mb-3">★★★★★</div>
+                    <p class="text-gray-700 text-sm leading-relaxed">Super équipe, j'ai la chance d'être suivie depuis presque 10 ans. La com est toujours très pertinente et soignée. Je recommande vivement !</p>
+                </div>
+
+                <!-- Avis 5 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow animate-on-scroll">
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-semibold">N</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-900">Nicolas Paris</h4>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <span>6 avis</span>
+                                <span>•</span>
+                                <span>il y a 4 semaines</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mb-3">★★★★★</div>
+                    <p class="text-gray-700 text-sm leading-relaxed">Je suis très satisfait des services de BL_NK. Ils m'ont aidé à mettre en place une stratégie de croissance efficace ! L'équipe est réactive et le travail fourni est de grande qualité. Les résultats sont là, et je les recommande vivement.</p>
+                </div>
+
+                <!-- Avis 6 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow animate-on-scroll">
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center text-white font-semibold">V</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-900">Valere Sede</h4>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <span>3 avis</span>
+                                <span>•</span>
+                                <span>il y a 1 semaine</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Nouveau</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 text-sm mb-3">★★★★★</div>
+                    <p class="text-gray-700 text-sm leading-relaxed">Des années d'expertise dans le marketing spécialisé pour avocats, et ça se voit !</p>
+                </div>
+            </div>
+
+            <!-- Bouton voir plus -->
+            <div class="text-center mt-10">
+                <button class="text-blue-600 hover:text-blue-800 font-semibold transition-colors">
+                    Voir tous les avis sur Google →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ultra-Premium FAQ -->
+    <section class="py-20 sm:py-28 lg:py-36 bg-gradient-to-br from-gray-900 to-black text-white relative overflow-hidden">
+        <!-- Ultra-sophisticated background -->
+        <div class="absolute inset-0">
+            <!-- Complex gradient layers -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-white/[0.06] via-transparent to-gray-100/[0.04]"></div>
+            <div class="absolute inset-0 bg-gradient-to-bl from-transparent via-white/[0.03] to-transparent"></div>
+            
+            <!-- Dynamic geometric elements -->
+            <div class="absolute top-1/4 left-1/3 w-96 h-96 bg-white/[0.02] rounded-full filter blur-3xl animate-pulse" style="animation-duration: 20s;"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-80 h-80 bg-white/[0.04] rounded-full filter blur-2xl animate-pulse" style="animation-duration: 24s;"></div>
+            <div class="absolute top-1/2 right-1/3 w-64 h-64 bg-white/[0.03] rounded-full filter blur-xl animate-pulse" style="animation-duration: 18s;"></div>
+            
+            <!-- Floating particles constellation -->
+            <div class="absolute top-1/5 right-1/5 w-2 h-2 bg-white/[0.08] rounded-full animate-pulse" style="animation-delay: 0s; animation-duration: 10s;"></div>
+            <div class="absolute top-3/4 left-1/4 w-1.5 h-1.5 bg-white/[0.1] rounded-full animate-pulse" style="animation-delay: 2s; animation-duration: 8s;"></div>
+            <div class="absolute bottom-1/4 right-2/3 w-1 h-1 bg-white/[0.12] rounded-full animate-pulse" style="animation-delay: 4s; animation-duration: 12s;"></div>
+            
+            <!-- Premium texture overlay -->
+            <div class="absolute inset-0 opacity-[0.006] animate-pulse" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 90px 90px; animation-duration: 22s;"></div>
+        </div>
+        
+        <div class="relative max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+            <!-- Ultra-refined Header -->
+            <div class="text-center mb-16 sm:mb-20 lg:mb-24">
+                
+                <!-- Sophisticated typography -->
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-white leading-[1.02] mb-10 max-w-5xl mx-auto tracking-[-0.02em]">
+                    <span class="relative inline-block">
+                        Questions
+                        <div class="absolute -bottom-2 left-0 w-full h-[4px] bg-gradient-to-r from-transparent via-white/[0.2] to-transparent blur-[1px] rounded-full"></div>
+                    </span>
+                    <br class="hidden sm:block"/>
+                    <span class="relative inline-block mt-2 sm:mt-0">
+                        <span class="relative z-10 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent font-bold">fréquentes</span>
+                        <div class="absolute -bottom-2 left-0 w-full h-6 bg-gradient-to-r from-white/[0.1] via-white/[0.2] to-white/[0.1] blur-sm rounded-full transform rotate-1"></div>
+                    </span>
+                </h2>
+                
+                <!-- Elegant separator -->
+                <div class="flex items-center justify-center">
+                    <div class="flex items-center gap-4 opacity-35">
+                        <div class="w-20 h-[1px] bg-gradient-to-r from-transparent to-white/40"></div>
+                        <div class="w-2.5 h-2.5 bg-white/40 rounded-full animate-pulse" style="animation-duration: 6s;"></div>
+                        <div class="w-8 h-[1px] bg-white/40"></div>
+                        <div class="w-1.5 h-1.5 bg-white/30 rounded-full"></div>
+                        <div class="w-20 h-[1px] bg-gradient-to-r from-white/40 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+                
+                <!-- Ultra-Premium FAQ Items -->
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="group relative animate-on-scroll">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-blue-500/[0.1] via-indigo-400/[0.06] to-blue-500/[0.1] rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative bg-white/[0.08] backdrop-blur-sm rounded-2xl border border-white/[0.15] overflow-hidden">
+                            <button class="w-full px-8 py-6 text-left font-medium text-lg text-white flex justify-between items-center hover:bg-white/[0.05] transition-colors duration-300" onclick="toggleFaq(0)">
+                                <span>Combien de temps avant d'obtenir des résultats SEO visibles ?</span>
+                                <span class="faq-icon text-2xl transition-transform duration-300 text-blue-300">+</span>
+                            </button>
+                            <div class="faq-answer relative bg-gradient-to-br from-white/[0.12] via-white/[0.08] to-white/[0.06] backdrop-blur-sm border border-white/[0.2]">
+                                <p class="text-gray-100 leading-relaxed">Généralement, les premiers résultats apparaissent après 3 à 6 mois. Le SEO est une stratégie à moyen terme : comptez une année pleine pour des résultats durables.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="group relative">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-green-500/[0.1] via-emerald-400/[0.06] to-green-500/[0.1] rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative bg-white/[0.08] backdrop-blur-sm rounded-2xl border border-white/[0.15] overflow-hidden">
+                            <button class="w-full px-8 py-6 text-left font-medium text-lg text-white flex justify-between items-center hover:bg-white/[0.05] transition-colors duration-300" onclick="toggleFaq(1)">
+                                <span>Mon cabinet est-il trop petit pour investir dans une stratégie SEO ?</span>
+                                <span class="faq-icon text-2xl transition-transform duration-300 text-green-300">+</span>
+                            </button>
+                            <div class="faq-answer relative bg-gradient-to-br from-white/[0.12] via-white/[0.08] to-white/[0.06] backdrop-blur-sm border border-white/[0.2]">
+                                <p class="text-gray-100 leading-relaxed">Absolument pas ! Que vous exerciez seul, en petite équipe ou dans un grand cabinet, le SEO est adaptable à tout volume d'activité juridique.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="group relative">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-purple-500/[0.1] via-violet-400/[0.06] to-purple-500/[0.1] rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative bg-white/[0.08] backdrop-blur-sm rounded-2xl border border-white/[0.15] overflow-hidden">
+                            <button class="w-full px-8 py-6 text-left font-medium text-lg text-white flex justify-between items-center hover:bg-white/[0.05] transition-colors duration-300" onclick="toggleFaq(2)">
+                                <span>Mon contenu juridique joue-t-il un rôle majeur dans mon référencement ?</span>
+                                <span class="faq-icon text-2xl transition-transform duration-300 text-purple-300">+</span>
+                            </button>
+                            <div class="faq-answer relative bg-gradient-to-br from-white/[0.12] via-white/[0.08] to-white/[0.06] backdrop-blur-sm border border-white/[0.2]">
+                                <p class="text-gray-100 leading-relaxed">Tout à fait. Google favorise les sites qui répondent précisément aux intentions. Des contenus riches, précis, originaux et pratiques sont essentiels.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="group relative">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-yellow-500/[0.1] via-amber-400/[0.06] to-yellow-500/[0.1] rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative bg-white/[0.08] backdrop-blur-sm rounded-2xl border border-white/[0.15] overflow-hidden">
+                            <button class="w-full px-8 py-6 text-left font-medium text-lg text-white flex justify-between items-center hover:bg-white/[0.05] transition-colors duration-300" onclick="toggleFaq(3)">
+                                <span>Quelles erreurs dois-je éviter en SEO ?</span>
+                                <span class="faq-icon text-2xl transition-transform duration-300 text-yellow-300">+</span>
+                            </button>
+                            <div class="faq-answer relative bg-gradient-to-br from-white/[0.12] via-white/[0.08] to-white/[0.06] backdrop-blur-sm border border-white/[0.2]">
+                                <div class="text-gray-100 leading-relaxed">
+                                    <p class="mb-2">Les principales erreurs à éviter :</p>
+                                    <ul class="list-disc list-inside space-y-1 ml-4">
+                                        <li>Ignorer l'optimisation mobile et smartphones</li>
+                                        <li>Publier du contenu générique ou copié</li>
+                                        <li>Négliger les avis clients et le référencement local</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ultra-Premium Cocon Sémantique Section -->
+    <section class="py-20 sm:py-28 lg:py-36 bg-gradient-to-br from-white via-gray-50/20 to-white relative overflow-hidden">
+        <!-- Ultra-sophisticated background -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-tr from-gray-100/30 via-transparent to-gray-200/20"></div>
+            <div class="absolute inset-0 bg-gradient-to-bl from-transparent via-gray-50/40 to-transparent"></div>
+            
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gray-400/[0.04] rounded-full filter blur-3xl animate-pulse" style="animation-duration: 20s;"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gray-300/[0.06] rounded-full filter blur-2xl animate-pulse" style="animation-duration: 24s;"></div>
+            
+            <div class="absolute top-1/5 right-1/5 w-2 h-2 bg-gray-400/[0.1] rounded-full animate-pulse" style="animation-delay: 1s; animation-duration: 10s;"></div>
+            <div class="absolute top-3/4 left-1/4 w-1.5 h-1.5 bg-gray-500/[0.12] rounded-full animate-pulse" style="animation-delay: 3s; animation-duration: 8s;"></div>
+            
+            <div class="absolute inset-0 opacity-[0.008] animate-pulse" style="background-image: radial-gradient(circle at 3px 3px, rgba(0,0,0,0.08) 1px, transparent 0); background-size: 100px 100px; animation-duration: 22s;"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <!-- Ultra-refined Header -->
+            <div class="text-center mb-16 sm:mb-20">
+                
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-black leading-[1.02] mb-6 max-w-6xl mx-auto">
+                    Le <span class="relative z-10 bg-gradient-to-r from-gray-900 via-black to-gray-900 bg-clip-text text-transparent font-bold">cocon sémantique</span> :
+                    <br/>une stratégie puissante pour le SEO avocat
+                </h2>
+                
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Une architecture web intelligente qui transforme votre expertise juridique en autorité SEO
+                </p>
+            </div>
+            
+            <!-- Visual Explanation -->
+            <div class="grid lg:grid-cols-3 gap-8 sm:gap-12 mb-16">
+                <div class="group text-center">
+                    <div class="relative mb-8">
+                        <div class="w-24 h-24 mx-auto bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-4xl text-white shadow-xl group-hover:scale-110 transition-transform duration-300">
+                            📚
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-black mb-4">Votre bibliothèque juridique</h3>
+                    <p class="text-gray-600 leading-relaxed">Imaginez votre site comme une bibliothèque juridique d'exception</p>
+                </div>
+                
+                <div class="group text-center">
+                    <div class="relative mb-8">
+                        <div class="w-24 h-24 mx-auto bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-4xl text-white shadow-xl group-hover:scale-110 transition-transform duration-300">
+                            🏛️
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-black mb-4">Piliers d'expertise</h3>
+                    <p class="text-gray-600 leading-relaxed">Droit de la famille, Commercial, Pénal... Vos pages principales rayonnent d'autorité</p>
+                </div>
+                
+                <div class="group text-center">
+                    <div class="relative mb-8">
+                        <div class="w-24 h-24 mx-auto bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl flex items-center justify-center text-4xl text-white shadow-xl group-hover:scale-110 transition-transform duration-300">
+                            🕷️
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-black mb-4">Toile stratégique</h3>
+                    <p class="text-gray-600 leading-relaxed">Articles spécialisés, guides, FAQ... reliés par des liens internes pensés</p>
+                </div>
+            </div>
+            
+            <!-- Benefits Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="text-3xl mb-4">🎯</div>
+                    <h4 class="font-bold text-black mb-3">Meilleure compréhension</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Les moteurs de recherche saisissent mieux votre architecture et autorité</p>
+                </div>
+                
+                <div class="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="text-3xl mb-4">📈</div>
+                    <h4 class="font-bold text-black mb-3">Meilleur classement</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Renforce les mots-clés et augmente votre rang dans les résultats</p>
+                </div>
+                
+                <div class="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="text-3xl mb-4">✨</div>
+                    <h4 class="font-bold text-black mb-3">UX optimisée</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Les visiteurs trouvent facilement des informations complémentaires</p>
+                </div>
+                
+                <div class="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="text-3xl mb-4">👑</div>
+                    <h4 class="font-bold text-black mb-3">Autorité renforcée</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Devenez une référence qui capte et convertit un trafic ciblé</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subtle Divider -->
+    <div class="relative py-8">
+        <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-gray-200"></div>
+        </div>
+        <div class="relative flex justify-center">
+            <div class="bg-white px-4">
+                <div class="w-8 h-1 bg-gradient-to-r from-gray-300 via-gray-400 to-gray-300 rounded-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <section class="py-20 bg-gray-50">        
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+                    Nos <span class="bg-black text-white px-3 py-1 mx-1 rounded-sm transform -rotate-1 inline-block shadow-lg animate-rock-wiggle">réalisations</span> SEO
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez comment nous avons transformé la visibilité en ligne de nos clients
+                </p>
+            </div>
+            
+            <!-- Portfolio Card -->
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white border border-gray-200 rounded-2xl p-12 hover:shadow-xl transition-shadow duration-300 animate-on-scroll text-center">
+                    <div class="text-6xl mb-8">📁</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Portfolio Complet</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Consultez nos cas clients détaillés et les résultats obtenus pour chaque cabinet d'avocats
+                    </p>
+                    
+                    <button class="bg-black text-white font-bold py-4 px-8 rounded-xl hover:bg-gray-800 transition-all duration-300 hover:scale-105">
+                        Découvrez nos réalisations →
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Animated Arrow -->
+            <div class="flex justify-center mt-12">
+                <div class="animate-bounce">
+                    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-20 bg-gradient-to-br from-gray-900 to-black text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-8 leading-tight">
+                Prêt à dominer Google ?
+            </h2>
+            <p class="text-xl text-gray-100 mb-12">
+                Commencez avec un audit SEO gratuit et découvrez exactement comment surpasser votre concurrence.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+                <button class="bg-white text-black font-bold py-4 px-12 rounded-xl text-lg hover:bg-gray-100 transition-all duration-300">
+                    Obtenir mon audit gratuit →
+                </button>
+                <button class="border-2 border-white text-white font-bold py-4 px-12 rounded-xl text-lg hover:bg-white hover:text-black transition-all duration-300">
+                    Prendre rendez-vous
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto text-center">
+                <div class="bg-black/50 border border-gray-800 p-6 rounded-2xl">
+                    <div class="text-2xl mb-3">⚡</div>
+                    <div class="font-semibold text-white mb-1">Audit en 48h</div>
+                    <div class="text-sm text-gray-200">Analyse complète</div>
+                </div>
+                <div class="bg-black/50 border border-gray-800 p-6 rounded-2xl">
+                    <div class="text-2xl mb-3">🎯</div>
+                    <div class="font-semibold text-white mb-1">100% sur-mesure</div>
+                    <div class="text-sm text-gray-200">Stratégie personnalisée</div>
+                </div>
+                <div class="bg-black/50 border border-gray-800 p-6 rounded-2xl">
+                    <div class="text-2xl mb-3">🚀</div>
+                    <div class="font-semibold text-white mb-1">Résultats garantis</div>
+                    <div class="text-sm text-gray-200">Ou remboursé</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer SEO -->
+    <footer class="bg-gradient-to-br from-gray-900 to-black text-white py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-1">
+                    <div class="font-black text-3xl mb-4 tracking-tight">BL NK</div>
+                    <p class="text-gray-100 mb-6 leading-relaxed">
+                        L'agence SEO spécialisée dans les professions juridiques et libérales. Experts en référencement naturel pour avocats, notaires et professions réglementées.
+                    </p>
+                    <div class="space-y-2 text-sm text-gray-200">
+                        <p>📍 Paris, France</p>
+                        <p>📧 contact@bl-nk.fr</p>
+                        <p>📞 01 23 45 67 89</p>
+                    </div>
+                </div>
+                
+                <!-- Services SEO -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Services SEO</h3>
+                    <ul class="space-y-2 text-sm text-gray-100">
+                        <li><a href="#" class="hover:text-white transition-colors">SEO pour avocats</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">SEO pour notaires</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Audit SEO gratuit</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Optimisation technique</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Rédaction SEO juridique</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Link building</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">SEO local</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Spécialités Juridiques -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Spécialités</h3>
+                    <ul class="space-y-2 text-sm text-gray-100">
+                        <li><a href="#" class="hover:text-white transition-colors">Droit pénal</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Droit immobilier</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Droit de la famille</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Droit des affaires</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Droit social</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Droit fiscal</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contentieux</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Ressources & Legal -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Ressources</h3>
+                    <ul class="space-y-2 text-sm text-gray-100 mb-6">
+                        <li><a href="#" class="hover:text-white transition-colors">Blog SEO</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Guides SEO</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cas clients</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Outils SEO</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                    
+                    <h4 class="font-semibold mb-2">Informations légales</h4>
+                    <ul class="space-y-1 text-xs text-gray-200">
+                        <li><a href="#" class="hover:text-white transition-colors">Mentions légales</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Politique de confidentialité</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">CGV</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="bg-gray-800 rounded-2xl p-8 mb-8 text-center">
+                <h3 class="text-2xl font-bold mb-4">Prêt à booster votre visibilité ?</h3>
+                <p class="text-gray-100 mb-6">Obtenez un audit SEO gratuit de votre site web</p>
+                <button class="bg-white text-black font-semibold py-3 px-8 rounded-xl hover:bg-gray-100 transition-all duration-300">
+                    Demander un audit gratuit
+                </button>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="text-sm text-gray-200">
+                        © 2024 BL NK - Agence SEO. Tous droits réservés. | SIRET: 123 456 789 00012
+                    </div>
+                    <div class="flex space-x-4 text-sm text-gray-200">
+                        <span>Fait avec ❤️ à Paris</span>
+                        <span>•</span>
+                        <span>Certifié Google Partner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        function toggleFaq(index) {
+            const faqAnswers = document.querySelectorAll('.faq-answer');
+            const faqIcons = document.querySelectorAll('.faq-icon');
+            
+            faqAnswers.forEach((answer, i) => {
+                if (i !== index) {
+                    answer.classList.remove('open');
+                    faqIcons[i].textContent = '+';
+                    faqIcons[i].style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            const targetAnswer = faqAnswers[index];
+            const targetIcon = faqIcons[index];
+            
+            if (targetAnswer.classList.contains('open')) {
+                targetAnswer.classList.remove('open');
+                targetIcon.textContent = '+';
+                targetIcon.style.transform = 'rotate(0deg)';
+            } else {
+                targetAnswer.classList.add('open');
+                targetIcon.textContent = '−';
+                targetIcon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+            }
+        });
+    </script>
+</body>
+</html>
