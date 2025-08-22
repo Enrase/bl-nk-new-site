@@ -78,6 +78,7 @@
 - **Couleurs trop vives** : restent harmonieuses avec le hero
 - **Animations lourdes** : subtilité avant tout
 - **Éléments décoratifs inutiles** : on a enlevé les "petites tuiles"
+- **Badges émojis décoratifs** : pas de "❓ Questions courantes", "✨ Équipe d'exception", etc.
 
 ## 📝 Exemples de Demandes Types
 - "Adapte le template pour un cabinet dentaire"
