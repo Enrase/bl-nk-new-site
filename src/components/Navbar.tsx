@@ -62,7 +62,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
                     Création de site web
                   </Link>
                   <Link 
-                    href="/" 
+                    href="/seo-avocats" 
                     className={`flex items-center px-4 py-3 text-sm transition-colors ${
                       currentPage === 'seo' 
                         ? 'text-gray-900 font-medium bg-gray-50' 
