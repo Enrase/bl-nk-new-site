@@ -78,7 +78,7 @@ export default function HeroSection({
           <h1 className={`text-4xl sm:text-5xl lg:text-7xl font-bold ${textClasses[backgroundType]} leading-tight mb-8 max-w-5xl mx-auto animate-fade-in-up`} style={{animationDelay: '0.2s'}}>
             {title.split(' ').map((word, index) => 
               word.toLowerCase() === highlightedWord?.toLowerCase() ? (
-                <span key={index} className="bg-white text-black px-3 py-1 mx-2 rounded-sm transform rotate-1 inline-block shadow-lg animate-rock-wiggle">
+                <span key={index} className="bg-black text-white px-3 py-1 mx-2 rounded-sm transform rotate-1 inline-block shadow-lg animate-rock-wiggle">
                   {word}
                 </span>
               ) : (
